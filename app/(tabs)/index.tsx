@@ -1,13 +1,16 @@
-import { Text, View, StyleSheet } from 'react-native';
+import {View, FlatList} from 'react-native';
 import {StatusBar} from "expo-status-bar";
+import { tracks } from '../../assets/data/tracks';
+import TrackListItem from "../../src/components/ui/track-list-item";
+
 
 export default function TabOneScreen() {
   return (
-    <View className="flex-1 items-center justify-center bg-white">
-      {/*<FlatList*/}
-      {/*  data={tracks}*/}
-      {/*  renderItem={({ item }) => <TrackListItem track={item} />}*/}
-      {/*/>*/}
+    <View className="flex-1">
+      <FlatList
+        data={tracks}
+        renderItem={({ item }) => <TrackListItem track={item} />}
+      />
       <StatusBar style="auto" />
     </View>
   );
