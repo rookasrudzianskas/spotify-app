@@ -1,13 +1,14 @@
-import { View, Text, StyleSheet, Image } from 'react-native';
+import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import {usePlayerContext} from "../../../providers/player-provider";
 import {useEffect, useState} from "react";
 import {Sound} from "expo-av/build/Audio/Sound";
-import {Audio} from "expo-av";
+import {Audio, AVPlaybackStatus} from "expo-av";
 
 const Player = () => {
   const { track } = usePlayerContext();
   const [sound, setSound] = useState<Sound>();
+  const [isPlaying, setIsPlaying] = useState(false);
 
   if(!track) return null;
   const image = track.album.images?.[0];
@@ -21,15 +22,31 @@ const Player = () => {
       await sound.unloadAsync();
     }
 
-    // if(!track.preview_url) return;
-    //
-    // const {sound: newSound} = await Audio.Sound.createAsync({
-    //   uri: track.preview_url,
-    // });
-    //
-    // setSound(newSound);
-    //
-    // await newSound.playAsync();
+    if(!track.preview_url) return;
+
+    const {sound: newSound} = await Audio.Sound.createAsync({
+      uri: track.preview_url,
+    });
+
+    setSound(newSound);
+    newSound.setOnPlaybackStatusUpdate(onPlaybackStatusUpdate);
+
+    await newSound.playAsync();
+  }
+
+  const onPlaybackStatusUpdate = (status: AVPlaybackStatus) => {
+    if(!status.isLoaded) return;
+    setIsPlaying(status.isPlaying);
+  }
+
+  const onPlayPause = async () => {
+    if(!sound) return;
+
+    if(isPlaying) {
+      await sound.pauseAsync();
+    } else {
+      await sound.playAsync();
+    }
   }
 
   return (
@@ -48,12 +65,17 @@ const Player = () => {
           color={'white'}
           style={{ marginHorizontal: 10 }}
         />
-        <Ionicons
-          disabled={!track?.preview_url}
-          name={'play'}
-          size={22}
-          color={track?.preview_url ? 'white' : 'gray'}
-        />
+        <TouchableOpacity
+          onPress={() => onPlayPause()}
+          activeOpacity={0.7}
+        >
+          <Ionicons
+            disabled={!track?.preview_url}
+            name={isPlaying ? 'pause' : 'play'}
+            size={22}
+            color={track?.preview_url ? 'white' : 'gray'}
+          />
+        </TouchableOpacity>
       </View>
     </View>
   );
