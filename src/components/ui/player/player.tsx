@@ -12,25 +12,25 @@ const Player = () => {
   if(!track) return null;
   const image = track.album.images?.[0];
 
-  // useEffect(() => {
-  //   playTrack();
-  // }, [track]);
-  //
-  // const playTrack = async () => {
-  //   if(sound) {
-  //     await sound.unloadAsync();
-  //   }
-  //
-  //   if(!track.preview_url) return;
-  //
-  //   const {sound: newSound} = await Audio.Sound.createAsync({
-  //     uri: track.preview_url,
-  //   });
-  //
-  //   setSound(newSound);
-  //
-  //   await newSound.playAsync();
-  // }
+  useEffect(() => {
+    playTrack();
+  }, [track]);
+
+  const playTrack = async () => {
+    if(sound) {
+      await sound.unloadAsync();
+    }
+
+    if(!track.preview_url) return;
+
+    const {sound: newSound} = await Audio.Sound.createAsync({
+      uri: track.preview_url,
+    });
+
+    setSound(newSound);
+
+    await newSound.playAsync();
+  }
 
   return (
     <View className="absolute w-full top-[-75px] p-2 h-[75px]">
