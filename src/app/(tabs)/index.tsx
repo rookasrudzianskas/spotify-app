@@ -12,6 +12,7 @@ export default function TabOneScreen() {
         renderItem={({ item }) => <TrackListItem track={item} />}
         keyExtractor={(item) => item.id}
         showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ paddingBottom: 75 }}
       />
       <StatusBar style="auto" />
     </View>

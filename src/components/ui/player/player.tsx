@@ -1,13 +1,36 @@
-//@ts-nocheck
 import { View, Text, StyleSheet, Image } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { tracks } from '../../../../assets/data/tracks';
-
-const track = tracks[0];
+import {usePlayerContext} from "../../../providers/player-provider";
+import {useEffect, useState} from "react";
+import {Sound} from "expo-av/build/Audio/Sound";
+import {Audio} from "expo-av";
 
 const Player = () => {
+  const { track } = usePlayerContext();
+  const [sound, setSound] = useState<Sound>();
+
   if(!track) return null;
   const image = track.album.images?.[0];
+
+  // useEffect(() => {
+  //   playTrack();
+  // }, [track]);
+  //
+  // const playTrack = async () => {
+  //   if(sound) {
+  //     await sound.unloadAsync();
+  //   }
+  //
+  //   if(!track.preview_url) return;
+  //
+  //   const {sound: newSound} = await Audio.Sound.createAsync({
+  //     uri: track.preview_url,
+  //   });
+  //
+  //   setSound(newSound);
+  //
+  //   await newSound.playAsync();
+  // }
 
   return (
     <View className="absolute w-full top-[-75px] p-2 h-[75px]">

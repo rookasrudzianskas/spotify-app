@@ -2,18 +2,21 @@
 import React from 'react';
 import {Text, View, StyleSheet, TouchableOpacity, Image} from 'react-native';
 import {Track} from "../../../../types";
+import {usePlayerContext} from "../../../providers/player-provider";
 
 type TrackListItemProps = {
   track: Track;
 };
 
 const TrackListItem = ({track}: TrackListItemProps) => {
+  const { setTrack } = usePlayerContext();
+
   const image = track.album?.images?.[0];
 
   return (
     <TouchableOpacity
       activeOpacity={0.7}
-      onPress={() => console.log('Playing track: ', track.id)}
+      onPress={() => setTrack(track)}
       className="flex flex-row w-full my-1"
     >
       {image && <Image source={{ uri: image.url }} className="w-12 h-12 rounded-md" />}
