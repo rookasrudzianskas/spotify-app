@@ -21,15 +21,15 @@ const Player = () => {
       await sound.unloadAsync();
     }
 
-    if(!track.preview_url) return;
-
-    const {sound: newSound} = await Audio.Sound.createAsync({
-      uri: track.preview_url,
-    });
-
-    setSound(newSound);
-
-    await newSound.playAsync();
+    // if(!track.preview_url) return;
+    //
+    // const {sound: newSound} = await Audio.Sound.createAsync({
+    //   uri: track.preview_url,
+    // });
+    //
+    // setSound(newSound);
+    //
+    // await newSound.playAsync();
   }
 
   return (
