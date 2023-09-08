@@ -1,9 +1,11 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Link, Tabs } from 'expo-router';
-import { Pressable, useColorScheme } from 'react-native';
+import {Pressable, useColorScheme, View} from 'react-native';
 
 import Colors from '../../constants/Colors';
 import {AntDesign} from "@expo/vector-icons";
+import Player from "../../components/ui/player";
+import {BottomTabBar} from "@react-navigation/bottom-tabs";
 
 /**
  * You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
@@ -22,7 +24,14 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-      }}>
+      }}
+      tabBar={(props) => (
+        <View>
+          <Player />
+          <BottomTabBar {...props} />
+        </View>
+      )}
+    >
       <Tabs.Screen
         name="index"
         options={{
@@ -42,6 +51,7 @@ export default function TabLayout() {
               </Pressable>
             </Link>
           ),
+
         }}
       />
       <Tabs.Screen
