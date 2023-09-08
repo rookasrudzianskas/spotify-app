@@ -1,6 +1,6 @@
 //@ts-nocheck
 import React from 'react';
-import {Text, View, StyleSheet, TouchableOpacity} from 'react-native';
+import {Text, View, StyleSheet, TouchableOpacity, Image} from 'react-native';
 import {Track} from "../../../../types";
 
 type TrackListItemProps = {
@@ -14,9 +14,13 @@ const TrackListItem = ({track}: TrackListItemProps) => {
     <TouchableOpacity
       activeOpacity={0.7}
       onPress={() => console.log('Playing track: ', track.id)}
-      className="flex flex-row w-full"
+      className="flex flex-row w-full my-1"
     >
-      <Text>Track</Text>
+      {image && <Image source={{ uri: image.url }} className="w-12 h-12 rounded-md" />}
+      <View className="flex items-start ml-5">
+        <Text className="text-lg font-[500] text-white">{track.name.slice(0, 30)}</Text>
+        <Text className="text-base text-gray-600 font-[500] -mt-1">{track.artists[0]?.name}</Text>
+      </View>
     </TouchableOpacity>
   );
 };

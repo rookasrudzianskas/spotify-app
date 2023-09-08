@@ -5,11 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="902a7086-ca2f-4b96-96d3-e25a15e2b505" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/ui/track-list-item/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ui/track-list-item/track-list-item.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/(tabs)/favorites.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(tabs)/_layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(tabs)/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/two.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(tabs)/search.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/+html.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/+html.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/[...missing].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[...missing].tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/EditScreenInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EditScreenInfo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ExternalLink.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ExternalLink.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/StyledText.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StyledText.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Themed.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Themed.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/__tests__/StyledText-test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/__tests__/StyledText-test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/Colors.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/Colors.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/track-list-item/track-list-item.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/track-list-item/track-list-item.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +81,10 @@
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/assets" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/components" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
@@ -112,7 +127,7 @@
       <option name="presentableId" value="Default" />
       <updated>1694177620195</updated>
       <workItem from="1694177621473" duration="184000" />
-      <workItem from="1694179345321" duration="897000" />
+      <workItem from="1694179345321" duration="2345000" />
     </task>
     <servers />
   </component>

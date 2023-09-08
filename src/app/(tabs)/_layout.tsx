@@ -3,6 +3,7 @@ import { Link, Tabs } from 'expo-router';
 import { Pressable, useColorScheme } from 'react-native';
 
 import Colors from '../../constants/Colors';
+import {AntDesign} from "@expo/vector-icons";
 
 /**
  * You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
@@ -25,8 +26,8 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Tab One',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          title: 'Home',
+          tabBarIcon: ({ color }) => <AntDesign name="home" size={23} color={color} />,
           headerRight: () => (
             <Link href="/modal" asChild>
               <Pressable>
@@ -44,10 +45,18 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="two"
+        name="search"
         options={{
-          title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          title: 'Search',
+          headerShown: false,
+          tabBarIcon: ({ color }) => <AntDesign name="search1" size={23} color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="favorites"
+        options={{
+          title: 'Favorites',
+          tabBarIcon: ({ color }) => <AntDesign name="heart" size={23} color={color} />,
         }}
       />
     </Tabs>
