@@ -2,6 +2,12 @@ type Favorites {
   id: ID!
   trackid: String
   userid: String
+
+  track: TrackResponse
+  @materializer(
+    query: "getTrack"
+    arguments: [{ name: "trackId", field: "trackid" }]
+  )
 }
 
 """
