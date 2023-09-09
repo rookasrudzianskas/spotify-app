@@ -7,7 +7,7 @@ import {AntDesign} from "@expo/vector-icons";
 import Player from "../../components/ui/player";
 import {BottomTabBar} from "@react-navigation/bottom-tabs";
 
-// BQB5p8XqmXSvjz2dUYoCVO1F2n3N7PDFLlmzlkfA52VQ9b9rw7VIyblZJGeokGylzBaWA8OyoKPe4izgYjn0YwWJ3ltwGVdN_QzOoMpdG9HAgTD2YtI - access token
+// BQBp8NHjaY1rljfFMr_hATqaCdsnG7PgyAWGJXqh8BZu1rXQF4y4uOjD0YhaVLrmgelhtdLDSs1-IwyeOzNhcHmgcLKcCtKhptiJ3jvfVabS7poC6Zw - access token
 
 /**
  * You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
