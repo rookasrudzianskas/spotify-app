@@ -24,6 +24,13 @@ type Query {
       table: "favorites"
       configuration: "postgresql_config"
     )
+  favoritesByUserid(userid: String!): [Favorites]
+  @dbquery(
+    type: "postgresql"
+    schema: "public"
+    table: "favorites"
+    configuration: "postgresql_config"
+  )
   favoritesList: [Favorites]
     @dbquery(
       type: "postgresql"
@@ -48,7 +55,7 @@ Feel free to modify them or aggregate more.
 """
 type Mutation {
   " Mutations for type 'Favorites' "
-  deleteFavorites(trackid: String!, userid: String!, id: ID!): Favorites
+  deleteFavorites(trackid: String!, userid: String!): Favorites
     @dbquery(
       type: "postgresql"
       schema: "public"
