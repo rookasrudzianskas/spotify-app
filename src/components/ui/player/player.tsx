@@ -45,6 +45,7 @@ const Player = () => {
   const { data, refetch } = useQuery(isFavoriteQuery, {
     variables: { userId: 'vadim', trackId: track?.id || '' },
   });
+
   const isLiked = data?.favoritesByTrackidAndUserid?.length > 0;
 
   useEffect(() => {
