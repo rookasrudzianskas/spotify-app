@@ -45,10 +45,10 @@ const Favorites = () => {
     return (<Text style={{ color: 'white' }}>Failed to fetch recommendations</Text>);
   }
 
-  const tracks = data?.recommendations?.tracks || [];
+  const tracks = (data?.favoritesByUserid || []).map((fav) => fav.track);
 
   return (
-    <View className="mx-5 mt-5">
+    <View className="mx-5 mt-5 flex flex-1">
       <FlatList
         data={tracks}
         renderItem={({ item }) => <TrackListItem track={item} />}
