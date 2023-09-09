@@ -1,9 +1,8 @@
 //@ts-nocheck
 import React from 'react';
-import {Text, View, StyleSheet, FlatList} from 'react-native';
-import {gql} from "@apollo/client";
+import {Text, View, StyleSheet, FlatList, ActivityIndicator} from 'react-native';
+import {gql, useQuery} from "@apollo/client";
 import TrackListItem from "../../components/ui/track-list-item";
-import {tracks} from "../../../assets/data/tracks";
 
 const query = gql`
     query getFavorites($userId: String!) {
@@ -34,6 +33,20 @@ const query = gql`
 `;
 
 const Favorites = () => {
+  const { data, loading, error } = useQuery(query, {
+    variables: { userId: 'rokas' },
+  });
+
+  if (loading) {
+    return <View className="flex flex-1 items-center justify-center"><ActivityIndicator /></View>;
+  }
+
+  if (error) {
+    return (<Text style={{ color: 'white' }}>Failed to fetch recommendations</Text>);
+  }
+
+  const tracks = data?.recommendations?.tracks || [];
+
   return (
     <View className="mx-5 mt-5">
       <FlatList
