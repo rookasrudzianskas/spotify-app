@@ -12,10 +12,10 @@ const Player = () => {
 
   if(!track) return null;
   const image = track.album.images?.[0];
-
-  useEffect(() => {
-    playTrack();
-  }, [track]);
+  //
+  // useEffect(() => {
+  //   playTrack();
+  // }, [track]);
 
   const playTrack = async () => {
     if(sound) {
