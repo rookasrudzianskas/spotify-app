@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="902a7086-ca2f-4b96-96d3-e25a15e2b505" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/stepzen/config.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(tabs)/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(tabs)/_layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stepzen/recommendations/index.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/stepzen/recommendations/index.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stepzen/auth/index.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/stepzen/auth/index.graphql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +114,7 @@
       <option name="presentableId" value="Default" />
       <updated>1694177620195</updated>
       <workItem from="1694177621473" duration="184000" />
-      <workItem from="1694179345321" duration="7047000" />
+      <workItem from="1694179345321" duration="7594000" />
     </task>
     <servers />
   </component>

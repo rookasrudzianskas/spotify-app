@@ -5,16 +5,13 @@ type TokenResponse {
 }
 
 type Query {
-  getToken(
-    client_id: String
-    client_secret: String
-    grant_type: String
-  ): TokenResponse
-    @rest(
-      method: POST
-      endpoint: "https://accounts.spotify.com/api/token"
-      headers: [
-        { name: "content-type", value: "application/x-www-form-urlencoded" }
-      ]
-    )
+  getToken: TokenResponse
+  @rest(
+    method: POST
+    endpoint: "https://accounts.spotify.com/api/token?grant_type=client_credentials&client_id=$client_id&client_secret=$client_secret"
+    headers: [
+      { name: "content-type", value: "application/x-www-form-urlencoded" }
+    ]
+    configuration: "auth_config"
+  )
 }
