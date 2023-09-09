@@ -39,6 +39,8 @@ export default function TabLayout() {
         options={{
           title: 'Home',
           tabBarIcon: ({ color }) => <AntDesign name="home" size={23} color={color} />,
+          // Do not show the word "Home" in the bottom tab bar.
+          tabBarLabel: () => null,
           headerRight: () => (
             <Link href="/modal" asChild>
               <Pressable>
@@ -60,6 +62,7 @@ export default function TabLayout() {
         name="search"
         options={{
           title: 'Search',
+          tabBarLabel: () => null,
           headerShown: false,
           tabBarIcon: ({ color }) => <AntDesign name="search1" size={23} color={color} />,
         }}
@@ -68,6 +71,7 @@ export default function TabLayout() {
         name="favorites"
         options={{
           title: 'Favorites',
+          tabBarLabel: () => null,
           tabBarIcon: ({ color }) => <AntDesign name="heart" size={23} color={color} />,
         }}
       />
